@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+:root {
+  --background: #5fa18f;
+  /* Teal background for main content */
+  --sidebar-bg: #ffffff;
+  --foreground: #ffffff;
+  /* Text on main content */
+  --sidebar-fg: #555555;
+  /* Text on sidebar */
+  --primary: #4a8775;
+  --secondary: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-sidebar-bg: var(--sidebar-bg);
+  --color-foreground: var(--foreground);
+  --color-sidebar-fg: var(--sidebar-fg);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --font-sans: var(--font-outfit);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+.perspective {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
