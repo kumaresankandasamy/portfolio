@@ -34,7 +34,11 @@ export default function Hero() {
     return (
         <section
             id="home"
-            className="min-h-screen flex items-start md:items-start justify-center md:justify-start px-8 md:px-20 pt-10 relative overflow-hidden bg-gradient-to-b from-teal-700 to-teal-800"
+            className="flex items-start justify-center
+                px-6 md:px-20
+                pt-20 md:pt-10 pb-16
+                relative overflow-hidden
+                bg-gradient-to-b from-teal-700 to-teal-800"
         >
             <div className="max-w-4xl z-10">
                 <motion.div

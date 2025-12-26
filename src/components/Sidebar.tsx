@@ -12,7 +12,6 @@ const navItems = [
     { name: "Skills", href: "#skills", icon: <BarChart2 size={20} /> },
     { name: "Education", href: "#education", icon: <GraduationCap size={20} /> },
     { name: "Contact", href: "#contact", icon: <Mail size={20} /> },
-    // { name: "Resume", href: "/resume.pdf", icon: <FileText size={20} /> },
 ];
 
 export default function Sidebar() {
