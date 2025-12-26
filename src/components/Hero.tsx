@@ -35,33 +35,33 @@ export default function Hero() {
         <section
             id="home"
             className="flex items-start justify-center
-                px-6 md:px-20
-                pt-20 md:pt-10 pb-16
+                px-4 md:px-20
+                pt-24 md:pt-10 pb-16
                 relative overflow-hidden
                 bg-gradient-to-b from-teal-700 to-teal-800"
         >
-            <div className="max-w-4xl z-10">
+            <div className="w-full max-w-4xl z-10">
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="space-y-6"
                 >
-                    <h1 className="text-5xl md:text-7xl font-thin tracking-tight leading-tight text-white">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-thin tracking-tight leading-tight text-white">
                         Hi, I'm <br />
-                        <span className="font-bold whitespace-nowrap">Kumaresan Kandasamy</span>
+                        <span className="font-bold">Kumaresan Kandasamy</span>
                         <span className="text-primary">.</span>
                     </h1>
 
-                    <div className="text-2xl md:text-4xl font-light text-white/80 h-10 flex items-center gap-2">
-                        A{" "}
+                    <div className="text-xl sm:text-2xl md:text-4xl font-light text-white/80 min-h-[40px] flex flex-wrap items-center gap-2">
+                        <span>A</span>
                         <span className="font-semibold text-white border-b-2 border-primary">
                             {displayText}
                         </span>
                         <span className="animate-pulse">|</span>
                     </div>
 
-                    <p className="text-lg md:text-xl text-white/70 max-w-lg leading-relaxed mt-6">
+                    <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-lg leading-relaxed mt-4 sm:mt-6">
                         I build <strong>scalable web applications</strong> and <strong>cloud-based data solutions</strong>, turning complex challenges into efficient, real-world results.
                     </p>
 

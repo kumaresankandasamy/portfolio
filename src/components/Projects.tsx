@@ -70,8 +70,8 @@ export default function Projects() {
             </div>
 
             {/* Project Cards */}
-            <div className="max-w-6xl mx-auto px-6">
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
@@ -79,7 +79,7 @@ export default function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group rounded-2xl overflow-hidden bg-white shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2"
+                            className="group rounded-2xl overflow-hidden bg-white shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 w-full"
                         >
                             {/* Image */}
                             <div className="relative h-48 w-full overflow-hidden">
@@ -108,7 +108,7 @@ export default function Projects() {
                             </div>
 
                             {/* Content */}
-                            <div className="p-6">
+                            <div className="p-5 sm:p-6">
                                 <h3 className="text-xl font-bold mb-2 text-zinc-800">
                                     {project.title}
                                 </h3>

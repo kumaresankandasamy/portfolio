@@ -24,7 +24,7 @@ export default function RootLayout({
         className={`${outfit.variable} antialiased bg-background text-foreground flex`}
       >
         <Sidebar />
-        <main className="flex-1 md:ml-72 min-h-screen">
+        <main className="flex-1 md:ml-72 min-h-screen min-w-0 overflow-x-hidden">
           {children}
         </main>
       </body>

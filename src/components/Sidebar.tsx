@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { User, Activity, FolderOpen, BarChart2, GraduationCap, Mail, Github, Linkedin, Menu } from "lucide-react";
 
 const navItems = [
@@ -16,13 +16,54 @@ const navItems = [
 
 export default function Sidebar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [showToggle, setShowToggle] = useState(true); // Default to true for initial visibility
+    const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+    const resetHideTimer = (duration = 5000) => {
+        if (hideTimeoutRef.current) {
+            clearTimeout(hideTimeoutRef.current);
+        }
+        hideTimeoutRef.current = setTimeout(() => {
+            if (window.scrollY > 50) {
+                setShowToggle(false);
+            }
+        }, duration);
+    };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setShowToggle(true);
+            resetHideTimer();
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        // Initial timer
+        resetHideTimer();
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            if (hideTimeoutRef.current) {
+                clearTimeout(hideTimeoutRef.current);
+            }
+        };
+    }, []);
+
+    // Effect to show toggle after navigation (when menu closes)
+    useEffect(() => {
+        if (!isOpen) {
+            setShowToggle(true);
+            resetHideTimer(5000);
+        }
+    }, [isOpen]);
 
     return (
         <>
             {/* Mobile Toggle Button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="fixed top-4 left-4 z-[60] p-2 bg-white rounded-lg shadow-lg md:hidden text-zinc-600"
+                onMouseEnter={() => setShowToggle(true)}
+                onMouseLeave={() => resetHideTimer(2000)}
+                className={`fixed top-4 left-4 z-[60] p-2 bg-white rounded-lg shadow-lg md:hidden text-zinc-600 transition-all duration-300 ${showToggle ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"}`}
             >
                 <Menu size={24} />
             </button>
