@@ -64,7 +64,7 @@ export default function Education() {
                             <div>
                                 <h3 className="text-xl font-bold text-zinc-900 mb-2">Full Stack Development Program</h3>
                                 <p className="text-lg font-semibold text-primary mb-1">Great Learning</p>
-                                <p className="text-zinc-500 mb-4">2019 - November 2019</p>
+                                <p className="text-zinc-500 mb-4">2019 - 2019</p>
                                 <a
                                     href="https://eportfolio.mygreatlearning.com/kumaresan-kandasamy"
                                     target="_blank"
