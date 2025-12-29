@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 /* ------------------ Reusable Social Card ------------------ */
 function SocialCard({
@@ -28,18 +29,25 @@ function SocialCard({
     );
 }
 
-/* ------------------ Email Flip Card ------------------ */
+/* ------------------ Email Flip Card (Tap / Click) ------------------ */
 function EmailFlipCard() {
+    const [flipped, setFlipped] = useState(false);
+
     return (
-        <div className="relative h-44 perspective">
+        <div
+            className="relative h-44 perspective"
+            onClick={() => setFlipped(!flipped)}
+        >
             <motion.div
                 className="relative w-full h-full preserve-3d cursor-pointer"
-                whileHover={{ rotateY: 180 }}
+                animate={{ rotateY: flipped ? 180 : 0 }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
             >
                 {/* Front */}
-                <div className="absolute inset-0 bg-white rounded-lg shadow-md border border-zinc-100
-                                flex flex-col items-center justify-center gap-4 backface-hidden">
+                <div
+                    className="absolute inset-0 bg-white rounded-lg shadow-md border border-zinc-100
+                               flex flex-col items-center justify-center gap-4 backface-hidden"
+                >
                     <div className="w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center text-teal-600">
                         <Mail size={28} />
                     </div>
@@ -49,8 +57,10 @@ function EmailFlipCard() {
                 </div>
 
                 {/* Back */}
-                <div className="absolute inset-0 bg-white rounded-lg shadow-md border border-zinc-100
-                                flex flex-col items-center justify-center gap-4 backface-hidden rotate-y-180">
+                <div
+                    className="absolute inset-0 bg-white rounded-lg shadow-md border border-zinc-100
+                               flex flex-col items-center justify-center gap-4 backface-hidden rotate-y-180"
+                >
                     <div className="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center text-white">
                         <Mail size={28} />
                     </div>
@@ -67,7 +77,6 @@ function EmailFlipCard() {
 export default function Contact() {
     return (
         <section id="contact" className="pt-0 pb-24 bg-zinc-50 relative">
-
             {/* Header */}
             <div className="w-full bg-teal-700 py-6 mb-8 shadow-md">
                 <div className="max-w-6xl mx-auto px-6">
