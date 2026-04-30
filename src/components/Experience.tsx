@@ -8,7 +8,7 @@ const experiences = [
         company: "Lightcast",
         companyColor: "text-teal-600",
         roleColor: "text-orange-700",
-        period: "Apr 2025 - Present (5+ Years)",
+        period: "Apr 2025 - Present (6+ Years)",
         location: "Dharmapuri, TN",
         logo: "/lightcast.png",
         desc: [

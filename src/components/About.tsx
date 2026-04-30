@@ -40,7 +40,7 @@ export default function About() {
                         >
                             <div className="space-y-4 text-zinc-600 text-lg leading-relaxed">
                                 <p>
-                                    I have 6 years of experience in full-stack development using Next.js, React.js, Tailwind CSS, and Python, building maintainable and efficient systems.
+                                    I have 6+ years of experience in full-stack development using Next.js, React.js, Tailwind CSS, and Python, building maintainable and efficient systems.
                                 </p>
                                 <p>
                                     I also have extensive experience in cloud architecture on AWS and GCP, designing data pipelines and platforms using Snowflake, BigQuery. Additionally, I develop internal tools and dashboards to optimize complex workflows.
